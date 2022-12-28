@@ -1,0 +1,8 @@
+fastapi
+firebase_admin
+firebase
+pandas
+numpy
+statsmodels.tsa.stattools
+statsmodels.tsa.arima.model
+datetime
