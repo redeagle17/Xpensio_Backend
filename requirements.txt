@@ -3,6 +3,6 @@ firebase_admin
 firebase
 pandas
 numpy
-statsmodels.tsa.stattools
-statsmodels.tsa.arima.model
+statsmodels
 datetime
+uvicorn
