@@ -3,9 +3,7 @@ import numpy as np
 import statsmodels.tsa.stattools as tsa
 from statsmodels.tsa.arima.model import ARIMA
 from datetime import datetime
-# def arima_prediction(date,amount):
-    
-df=pd.read_csv('Electric_Production.csv')
+
 def arima_prediction(date,amount):
     df = pd.DataFrame(list(zip(date,amount)),columns =['DATE', 'Expense'])
     # df.rename(columns = {'IPG2211A2N':'Production'}, inplace = True)
