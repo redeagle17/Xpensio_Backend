@@ -14,7 +14,7 @@ def cat(q):
         # d=list(doc.to_dict().values())
         d=doc.to_dict()
         amount=d.get('Amount')
-        category=d.get('Date')
+        category=d.get('To')
         food = ['zomato','swiggy','eatsure','eatclub','dominos','pizzahut','ovenstory','mcdonalds','burger king','mojo pizza','fasoos','kaggis','kfc']
         travel = ['makemytrip','goibibo','easemytrip','indigo','airasia','spicejet','airindia','gofirst','ola','uber','rapido']
         ecommerce = ['dunzo','amazon','flipkart','myntra','bigbasket','dmart','bookmyshow']
