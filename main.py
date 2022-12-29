@@ -37,26 +37,26 @@ async def login(q:str,t:str):
     x=cat(q)
     return x
 
-@app.get('/predict')
-async def predict():
-    doc=db.collection("Email").document("Predictions_of_next_month").collection("Predictions").get()
+@app.get('/predict/{q}')
+async def predict(q:str):
+    doc=db.collection(q).document("Predictions_of_next_month").collection("Predictions").get()
     if len(doc)>0:
-        y=db.collection("Email").document("Predictions_of_next_month").collection("Predictions").document('Prediction').get()
+        y=db.collection(q).document("Predictions_of_next_month").collection("Predictions").document('Prediction').get()
         ans=list(y.to_dict().values())
         return ans[0]
     else:
-        trans=db.collection("Email").document("Transactions").collection("Transaction").get()
+        trans=db.collection(q).document("Transactions").collection("Transaction").get()
         date=[]
         amount=[]
         for d in trans:
-            d=doc.to_dict()
-            a=d.get('Amount')
-            c=d.get('Category')
+            doc=d.to_dict()
+            a=doc.get('Amount')
+            c=doc.get('Date')
             date.append(c)
             amount.append(a)
         x=arima_prediction(date,amount)
+        db.collection("Email").document("Predictions_of_next_month").collection("Predictions").document('Prediction').set({'Prediction':x})
         return x
-        # db.collection("Email").document("Predictions_of_next_month").collection("Predictions").document('Prediction').set({'Prediction':x})
 
 
 
