@@ -8,21 +8,5 @@ db=firestore.client()
 
 def create_collection(li,q):
     db.collection(q).document("Transactions").collection("Transaction").document().set({"Date":li[2],"To":li[0],"Amount":float(li[1])})
-# def solve():
-#     date=[]
-#     amount=[]
-#     # category=[]
-#     to=[]
-#     docs=db.collection('email1').get()
-#     for doc in docs:
-#         d=list(doc.to_dict().values())
-#         date.append(d[1])
-#         amount.append(d[2])
-#         to.append(d[0])
-    
-    # dict= {'Date': date, 'amount': amount,'TO':to}    
-    # return dict    
-# df = pd.DataFrame(dict) 
-# df.to_csv('dataset.csv')
 
 

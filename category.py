@@ -27,5 +27,5 @@ def cat(q):
             sumEcom = sumEcom + amount
         else:
             sumOther = sumOther + amount
-    db.collection(q).document('Categories').collection('Category').document("Category").set({"Food":sumFood,"Travel":sumTravel,"E-Commerce":sumEcom,"Other":sumOther})
-    return {"Food":sumFood,"Travel":sumTravel,"E-Commerce":sumEcom,"Other":sumOther}
+    db.collection(q).document('Categories').collection('Category').document("Category").set({"Food":sumFood,"Travel":sumTravel,"ECommerce":sumEcom,"Other":sumOther})
+    return {"Food":sumFood,"Travel":sumTravel,"ECommerce":sumEcom,"Other":sumOther}
