@@ -11,14 +11,14 @@ import pandas as pd
 db=firestore.client()
 app = FastAPI()
 
-@app.get('/signup/{q}/{t}')
+@app.get('/signup/')
 async def status(q:str,t:str):
     db.collection(q).document("Message List").collection("List").document('List').set({'list':t[0:len(t)-1]})
     findstring(t,q)
     x=cat(q)
     return x
 
-@app.get('/login/{q}/{t}')
+@app.get('/login/')
 async def login(q:str,t:str):
     li= t.split(',')
     old=db.collection(q).document("Message List").collection("List").get()
