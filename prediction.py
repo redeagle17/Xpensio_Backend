@@ -3,6 +3,8 @@ import numpy as np
 import statsmodels.tsa.stattools as tsa
 from statsmodels.tsa.arima.model import ARIMA
 from datetime import datetime
+from numba import njit
+
 
 def arima_prediction(date,amount):
     df = pd.DataFrame(list(zip(date,amount)),columns =['DATE', 'Expense'])
